@@ -16,7 +16,7 @@ export const useSSRApiClient = () => {
     });
 
     const signInRoute = (returnTo: string) => {
-        return api.post<{redirectTo: string}>('/signin', {
+        return api.post<{redirectUrl: string}>('/signin', {
             returnTo
         });
     }
