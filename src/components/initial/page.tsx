@@ -8,7 +8,11 @@ import { Button } from 'amaterasu-freyja-ui-design-system';
 import { useSSRApiClient } from '@/apiRoutes/client';
 import { useState } from 'react';
 
-export const InitialComponentPage = () => {
+type InitialComponentPageProps = {
+    returnTo?: string;
+}
+
+export const InitialComponentPage = ({ returnTo }: InitialComponentPageProps) => {
     const {signInRoute} = useSSRApiClient();
 
     const [isLoading, setIsLoading] = useState(false);
@@ -17,7 +21,7 @@ export const InitialComponentPage = () => {
     const handleLogin = async () => {
         try {
             setIsLoading(true);
-            const response = await signInRoute('/home');
+            const response = await signInRoute(returnTo || '/home');
             window.location.href = response.data.redirectUrl;
         } catch (error) {
             console.error('Error during sign-in:', error);

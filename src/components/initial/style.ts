@@ -20,7 +20,8 @@ export const StyledBanner = styled.div`
     position: relative;
     background-color: #111111;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
+    padding-bottom: 5rem;
     overflow: hidden;
 `
 

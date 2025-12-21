@@ -14,11 +14,13 @@
     "@emotion/server": "^11.11.0",
     "amaterasu-freyja-ui-design-system": "^1.1.0",
     "axios": "^1.13.2",
-    "next": "16.0.3",
+    "jsonwebtoken": "^9.0.3",
+    "next": "^16.1.0",
     "react": "19.2.0",
     "react-dom": "19.2.0"
   },
   "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
