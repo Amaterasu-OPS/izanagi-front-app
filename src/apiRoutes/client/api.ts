@@ -1,6 +1,7 @@
 'use client';
 
 import axios from 'axios';
+import { callbackResponse } from '@/types/callback/callbackResponse';
 
 export const useSSRApiClient = () => {
     const api = axios.create({
@@ -22,7 +23,7 @@ export const useSSRApiClient = () => {
     }
 
     const callbackRoute = (code: string, state: string) => {
-        return api.post<{redirectTo: string}>('/callback', {
+        return api.post<callbackResponse>('/callback', {
             code,
             state
         });

@@ -24,3 +24,12 @@ export const isAuthenticated = (req: NextRequest) => {
 const isOpaqueToken = (token: string) => {
     return token.split('.').length !== 3;
 }
+
+export const getTokenPayload = (token: string) => {
+    try {
+        const payload = jwt.decode(token);
+        return payload;
+    } catch {
+        return null;
+    }
+}

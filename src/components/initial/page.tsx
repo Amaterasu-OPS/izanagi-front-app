@@ -26,6 +26,8 @@ export const InitialComponentPage = ({ returnTo }: InitialComponentPageProps) =>
         } catch (error) {
             console.error('Error during sign-in:', error);
             setOverlayVisible(true);
+        } finally {
+            setIsLoading(false);
         }
     }
 
