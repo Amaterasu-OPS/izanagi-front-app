@@ -2,6 +2,7 @@
 
 import * as S from './style'
 
+import { FiCornerDownLeft, FiDatabase, FiKey, FiSettings, FiUser, FiUsers } from 'react-icons/fi'
 import { usePathname, useRouter } from 'next/navigation'
 
 import { MenuItem } from './item/menuItem'
@@ -34,13 +35,13 @@ export const Menu = ({ user }: MenuProps) => {
       <Text suppressHydrationWarning color='#ffffff' size='xlarge'>{`${user.given_name} ${user.family_name}`}</Text>
     </S.MenuHeader>
     <S.MenuContent direction='column' gap='.25rem'>
-      <MenuItem label="Clusters" isActive={isActiveRoute('clusters')} onClick={() => router.replace('/home')} />
-      <MenuItem label="Settings" isActive={isActiveRoute('settings')} />
-      <MenuItem label="Users" isActive={isActiveRoute('users')} />
-      <MenuItem label="Permissions" isActive={isActiveRoute('permissions')} />
-      <MenuItem label="Account" isActive={isActiveRoute('account')} />
+      <MenuItem icon={<FiDatabase/>} label="Clusters" isActive={isActiveRoute('clusters')} onClick={() => router.replace('/home')} />
+      <MenuItem icon={<FiSettings/>} label="Settings" isActive={isActiveRoute('settings')} />
+      <MenuItem icon={<FiUsers/>} label="Users" isActive={isActiveRoute('users')} />
+      <MenuItem icon={<FiKey/>} label="Permissions" isActive={isActiveRoute('permissions')} />
+      <MenuItem icon={<FiUser/>} label="Account" isActive={isActiveRoute('account')} />
 
-      <S.MenuContentItemLast label='Exit' isActive={false} />
+      <S.MenuContentItemLast icon={<FiCornerDownLeft/>} label='Exit' isActive={false} />
     </S.MenuContent>
   </S.ComponentMenu>
 }

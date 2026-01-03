@@ -1,6 +1,7 @@
+import { Flex } from 'amaterasu-freyja-ui-design-system'
 import styled from '@emotion/styled'
 
-export const Item = styled.div<{ isActive: boolean }>`
+export const Item = styled(Flex)<{ isActive: boolean }>`
     padding: .75rem 1rem;
     cursor: pointer;
     background-color: ${(props: { isActive: boolean }) => props.isActive ? '#3D3D3D' : 'transparent'};
@@ -12,6 +13,10 @@ export const Item = styled.div<{ isActive: boolean }>`
         font-size: 18px;
     }
 
+    & svg {
+        stroke: #C2C2C2;
+    }
+
     &:hover {
         background-color: ${(props) => props.isActive ? '#3D3D3D' : '#1A1A1A'};
     }
@@ -20,6 +25,10 @@ export const Item = styled.div<{ isActive: boolean }>`
         & span {
             color: #FFFFFF;
             font-weight: bold;
+        }
+
+        & svg {
+            stroke: #FFFFFF;
         }
     `}
 `
